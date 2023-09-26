@@ -13,3 +13,7 @@ import 'package:flutter/material.dart';
 
 Configuring the AppBar(); with leading, title and actions.
 
+# Number 2
+I wrapped the icon.refresh with the IconButton Widget. I also wrapped the SingleChildScrollview Widget with a Container Widget.
+And then, I placed the BoxDecoration and LinearGradient Widgets to customize the software.
+
