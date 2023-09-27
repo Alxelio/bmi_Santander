@@ -19,3 +19,9 @@ And then, I placed the BoxDecoration and LinearGradient Widgets to customize the
 
 # Number 3
 I has changed all the TextFormField Widgets, as well as colors, fontsize, fontweight and so on. I took this approach to customize the button too.
+
+# Number 4
+Improved the code with some components.
+
+# Number 5
+I made the second page to house the result of calculus for BMI - (Body Mass Index) and did some more components as well.
