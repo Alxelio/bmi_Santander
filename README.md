@@ -17,3 +17,5 @@ Configuring the AppBar(); with leading, title and actions.
 I wrapped the icon.refresh with the IconButton Widget. I also wrapped the SingleChildScrollview Widget with a Container Widget.
 And then, I placed the BoxDecoration and LinearGradient Widgets to customize the software.
 
+# Number 3
+I has changed all the TextFormField Widgets, as well as colors, fontsize, fontweight and so on. I took this approach to customize the button too.
