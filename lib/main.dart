@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bmi_santander/Constants_TextStyle.dart';
 
 TextEditingController? namee = TextEditingController();
 TextEditingController? weightt = TextEditingController();
@@ -22,8 +23,6 @@ class myApp extends StatelessWidget {
 
 
 class Person extends StatefulWidget {
-  //Person({ @required this.namee, @required this.weightt, @required this.heightt });
-
 
   @override
   State<Person> createState() => _PersonState();
@@ -60,6 +59,7 @@ class _PersonState extends State<Person> {
         ),
 
         child: SingleChildScrollView(
+          padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0,),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -73,23 +73,15 @@ class _PersonState extends State<Person> {
                 keyboardType: TextInputType.name,
 
                 //From Inside Label
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 19,
-                ),
+                style: kTextStyle,
 
                 //From Outside Label
-                decoration: InputDecoration(
-                  hintText: "Enter your First and Last names please!",
-                  labelText: "Completed Name",
-                  labelStyle: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                decoration: kInputDecorationNamee,
 
                 controller: namee,
               ),
+
+              SizedBox(height: 15.0,),
 
               //Weight
               TextFormField(
@@ -97,50 +89,32 @@ class _PersonState extends State<Person> {
                 keyboardType: TextInputType.number,
 
                 //From Inside Label
-                style: TextStyle(
-                  fontSize: 19,
-                  color: Colors.white,
-                ),
+                style: kTextStyle,
 
                 //From Outside Label
-                decoration: InputDecoration(
-                  hintText: "Enter your Weight",
-                  labelText: "Weight",
-                  labelStyle: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                decoration: kInputDecorationWeightt,
 
                 controller: weightt,
-
               ),
+
+              SizedBox(height: 15.0,),
 
               //Height
               TextFormField(
                 textAlign: TextAlign.center,
                 keyboardType: TextInputType.number,
 
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 19,
-                ),
+                style: kTextStyle,
 
-                decoration: InputDecoration(
-                  hintText: "Enter your Height",
-                  labelText: "Height",
-                  labelStyle: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                decoration: kInputDecorationHeightt,
 
                 controller: heightt,
-
               ),
 
               //Elevated Button
-              Container(
+              Padding(
+                padding: EdgeInsets.only( top: 15.0, bottom: 15.0,),
+                child: Container(
                   height: 60.0,
                   child: ElevatedButton(
                     onPressed: (){},
@@ -151,16 +125,14 @@ class _PersonState extends State<Person> {
                       ),
                     ),
                   ),
+                ),
               ),
 
               //Information
                 Text(
                   "Information",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 19,
-                    color: Colors.white,
-                  ),
+                  style: kTextStyle,
                 ),
 
             ],
