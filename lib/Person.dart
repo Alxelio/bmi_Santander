@@ -1,3 +1,4 @@
+import 'package:bmi_santander/Functions.dart';
 import 'package:bmi_santander/SecondPage.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi_santander/Constants_TextStyle.dart';
@@ -5,7 +6,7 @@ import 'package:bmi_santander/Constants_TextStyle.dart';
 TextEditingController? namee = TextEditingController();
 TextEditingController? weightt = TextEditingController();
 TextEditingController? heightt = TextEditingController();
-
+String informationn = 'Give some Informations about you, please';
 
 class Person extends StatefulWidget {
 
@@ -14,6 +15,8 @@ class Person extends StatefulWidget {
 }
 
 class _PersonState extends State<Person> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +25,7 @@ class _PersonState extends State<Person> {
         centerTitle: true,
         leading: Icon(Icons.account_circle_rounded),
         leadingWidth: 100,
-        actions: [ IconButton(onPressed: (){}, icon: Icon(Icons.refresh,))],
+        actions: [ IconButton(onPressed: reset, icon: Icon(Icons.refresh,))],
         backgroundColor: Colors.deepPurple[500],
         elevation: 25,
         toolbarOpacity: 0.95,
@@ -117,7 +120,7 @@ class _PersonState extends State<Person> {
 
               //Information
               Text(
-                "Information",
+                informationn,
                 textAlign: TextAlign.center,
                 style: kTextStyle,
               ),

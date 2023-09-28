@@ -25,3 +25,10 @@ Improved the code with some components.
 
 # Number 5
 I made the second page to house the result of calculus for BMI - (Body Mass Index) and did some more components as well.
+
+# Number 6
+I made a reset Function to clean all the variables. And for this, I placed a Functions file as component.
+
+
+
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:bmi_santander/Functions.dart';
 
 class SecondPagee extends StatefulWidget {
   //const SecondPagee({super.key});
@@ -13,19 +14,29 @@ class _SecondPageeState extends State<SecondPagee> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.account_circle_rounded),
-        title: Text("Information"),
-        actions: [Icon(Icons.refresh),],
+        leadingWidth: 100,
+        title: Text("Information",),
+        centerTitle: true,
+        actions: [IconButton(onPressed: reset, icon: Icon(Icons.refresh),)],
         backgroundColor: Colors.deepPurple[500],
         elevation: 25.0,
         toolbarOpacity: 0.95,
       ),
 
-      body: Container(
-      padding: EdgeInsets.fromLTRB(15.0, 0.0, 15.0, 15.0,),
-      child: ElevatedButton(onPressed: (){
-        Navigator.pop(context);
-      }, child: Text("Go Back",),),
-      )
+      body:
+      SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.bottomCenter,
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              "Go Back",
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
