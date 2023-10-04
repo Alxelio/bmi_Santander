@@ -34,6 +34,7 @@ I made a reset Function to clean all the variables. And for this, I placed a Fun
 # Number 7
 It was done some improvements and changes.
 
-
+# Number 8
+I placed the calculus function and put the background color in the second page as well. 
 
 

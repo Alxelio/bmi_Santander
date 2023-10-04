@@ -30,36 +30,54 @@ class _SecondPageeState extends State<SecondPagee> {
         ),
 
         body:
-        SingleChildScrollView(
+        Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              stops: [0.25, 0.45, 0.75],
+              colors: [ Color.fromARGB(255, 50, 27, 147),
+                Color.fromARGB(255, 67, 56, 182),
+                Color.fromARGB(255, 87, 63, 217),
+              ],
+            ),
+          ),
+
+
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                width: double.infinity,
-                color: Colors.amberAccent,
-                child: Text(" Here "),
+              Expanded(flex: 6,
+                child: Container(
+                  //height: 420,
+                  width: double.infinity,
+                  //color: Colors.amberAccent,
+                  child: Text(" "),
+                ),
               ),
-              Container(
-                color: Colors.red,
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.all(40.0),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: const Size(double.infinity, 70.0)
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Text(
-                      "Go Back",
+              Expanded(flex: 1,
+                child: Container(
+                  //height: 30,
+                  //color: Colors.red,
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(double.infinity, 70.0)
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        "Go Back",
+                      ),
                     ),
                   ),
                 ),
               ),
             ],
           ),
-
         ),
       ),
     );
