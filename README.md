@@ -1,4 +1,6 @@
 # bmi_santander
+# /home/alunime/snap/flutter/common/flutter/bin/cache/dart-sdk
+
 
 git@github.com:Alxelio/bmi_santander.git
 
@@ -28,6 +30,9 @@ I made the second page to house the result of calculus for BMI - (Body Mass Inde
 
 # Number 6
 I made a reset Function to clean all the variables. And for this, I placed a Functions file as component.
+
+# Number 7
+It was done some improvements and changes.
 
 
 

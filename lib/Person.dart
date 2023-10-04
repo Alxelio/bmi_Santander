@@ -9,122 +9,135 @@ TextEditingController? heightt = TextEditingController();
 String informationn = 'Give some Informations about you, please';
 
 class Person extends StatefulWidget {
-
   @override
   State<Person> createState() => _PersonState();
 }
 
 class _PersonState extends State<Person> {
 
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("BMI Calculator"),
-        centerTitle: true,
-        leading: Icon(Icons.account_circle_rounded),
-        leadingWidth: 100,
-        actions: [ IconButton(onPressed: reset, icon: Icon(Icons.refresh,))],
-        backgroundColor: Colors.deepPurple[500],
-        elevation: 25,
-        toolbarOpacity: 0.95,
-      ),
-
-      //drawer: Drawer(),
-
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            stops: [0.2, 0.7, 0.95],
-            colors: [ Colors.deepPurpleAccent,
-              Colors.deepPurple,
-              Colors.blue,
-            ],
-          ),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("BMI Calculator"),
+          centerTitle: true,
+          leading: const Icon(Icons.account_circle_rounded),
+          leadingWidth: 100,
+          actions: const [ IconButton(onPressed: reset, icon: Icon(Icons.refresh,))],
+          backgroundColor: Colors.deepPurple[500],
+          elevation: 25,
+          toolbarOpacity: 0.95,
         ),
 
-        child: SingleChildScrollView(
-          padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0,),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+        //drawer: Drawer(),
+
+        body: Container(
+            decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
+              stops: [0.2, 0.7, 0.95],
+              colors: [ Colors.deepPurpleAccent,
+                Colors.deepPurple,
+                Colors.blue,
+              ],
+            ),
+          ),
+          child: ListView(
             children: [
-              //Person icon
-              Icon(Icons.person, size: 200.0, color: Colors.white, ),
+              Container(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0,),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    //Person icon
+                    const Icon(Icons.person, size: 200.0, color: Colors.white, ),
 
-              //Name
-              TextFormField(
-                textAlign: TextAlign.center,
-                keyboardType: TextInputType.name,
+                    const SizedBox(height: 20.0),
 
-                //From Inside Label
-                style: kTextStyle,
+                    //Name
+                    TextFormField(
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.name,
 
-                //From Outside Label
-                decoration: kInputDecorationNamee,
+                      //From Inside Label
+                      style: kTextStyle,
 
-                controller: namee,
-              ),
+                      //From Outside Label
+                      decoration: kInputDecorationNamee,
 
-              SizedBox(height: 15.0,),
+                      controller: namee,
+                    ),
 
-              //Weight
-              TextFormField(
-                textAlign: TextAlign.center,
-                keyboardType: TextInputType.number,
+                    const SizedBox(height: 20.0,),
 
-                //From Inside Label
-                style: kTextStyle,
+                    //Weight
+                    TextFormField(
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
 
-                //From Outside Label
-                decoration: kInputDecorationWeightt,
+                      //From Inside Label
+                      style: kTextStyle,
 
-                controller: weightt,
-              ),
+                      //From Outside Label
+                      decoration: kInputDecorationWeightt,
 
-              SizedBox(height: 15.0,),
+                      controller: weightt,
+                    ),
 
-              //Height
-              TextFormField(
-                textAlign: TextAlign.center,
-                keyboardType: TextInputType.number,
+                    const SizedBox(height: 20.0,),
 
-                style: kTextStyle,
+                    //Height
+                    TextFormField(
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
 
-                decoration: kInputDecorationHeightt,
+                      style: kTextStyle,
 
-                controller: heightt,
-              ),
+                      decoration: kInputDecorationHeightt,
 
-              //Elevated Button
-              Padding(
-                padding: EdgeInsets.only( top: 15.0, bottom: 15.0,),
-                child: Container(
-                  height: 60.0,
-                  child: ElevatedButton(
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){return SecondPagee();}));
-                    },
-                    child: Text("Calculate",
-                      style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.bold,
+                      controller: heightt,
+                    ),
+
+                    //Elevated Button
+                    Padding(
+                      padding: const EdgeInsets.only( top: 15.0, bottom: 15.0,),
+                      child: Container(
+                        height: 70.0,
+                        child: ElevatedButton(
+                          onPressed: (){
+                            double result = cauculus();
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                              return SecondPagee(result: result);
+                            }));
+                            //Navigator.push(context, MaterialPageRoute(builder: (context){return SecondPagee( );}));
+                          },
+                          child: const Text("Calculate",
+                            style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+
+                    const SizedBox(height: 20,),
+
+                    //Information
+                    Text(
+                      informationn,
+                      textAlign: TextAlign.center,
+                      style: kTextStyle,
+                    ),
+
+                  ],
                 ),
               ),
-
-              //Information
-              Text(
-                informationn,
-                textAlign: TextAlign.center,
-                style: kTextStyle,
-              ),
-
+            ),
             ],
           ),
         ),
@@ -132,3 +145,5 @@ class _PersonState extends State<Person> {
     );
   }
 }
+
+
