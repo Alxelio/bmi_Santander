@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:bmi_santander/Constants_TextStyle.dart';
-import 'package:bmi_santander/Person.dart';
+import 'package:bmi_santander/constants_textstyle.dart';
+import 'package:bmi_santander/person.dart';
 
 void main(){
   runApp(myApp(),);

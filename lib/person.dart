@@ -1,7 +1,7 @@
-import 'package:bmi_santander/Functions.dart';
-import 'package:bmi_santander/SecondPage.dart';
+import 'package:bmi_santander/functions.dart';
+import 'package:bmi_santander/second_page.dart';
 import 'package:flutter/material.dart';
-import 'package:bmi_santander/Constants_TextStyle.dart';
+import 'package:bmi_santander/constants_textstyle.dart';
 
 TextEditingController? namee = TextEditingController();
 TextEditingController? weightt = TextEditingController();
@@ -108,20 +108,18 @@ class _PersonState extends State<Person> {
                       child: Container(
                         height: 70.0,
                         child: ElevatedButton(
-                          onPressed: (){
-                            double result = cauculus();
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                              return SecondPagee(result: result);
-                            }));
-                            //Navigator.push(context, MaterialPageRoute(builder: (context){return SecondPagee( );}));
-                          },
-                          child: const Text("Calculate",
+                          child: const Text("Confirm",
                             style: TextStyle(
                               fontSize: 19,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                  return SecondPage();
+                                }),
+                            );
+                          }),
                       ),
                     ),
 

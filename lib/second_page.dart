@@ -1,21 +1,23 @@
+import 'dart:io';
+import 'package:bmi_santander/person.dart';
 import 'package:flutter/material.dart';
-import 'package:bmi_santander/Functions.dart';
-import 'package:bmi_santander/SecondPage.dart';
+import 'package:bmi_santander/functions.dart';
 
-class SecondPagee extends StatefulWidget {
+class SecondPage extends StatefulWidget {
 
-  final double result;
-
-  SecondPagee({required this.result});
+  //final double result;
+  //SecondPage(this.result);
 
   @override
-  State<SecondPagee> createState() => _SecondPageeState();
+  State<SecondPage> createState() => _SecondPageState();
 }
 
-class _SecondPageeState extends State<SecondPagee> {
+class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    var result;
+    String result = "Start";
+
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -47,14 +49,48 @@ class _SecondPageeState extends State<SecondPagee> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+
               Expanded(flex: 6,
                 child: Container(
+                  color: Colors.blue,
                   //height: 420,
                   width: double.infinity,
                   //color: Colors.amberAccent,
-                  child: Text(" "),
+                  child: Center(
+                    child: Text(
+                      result.isNotEmpty ? result : "failed", style: const TextStyle(fontSize: 18, color: Colors.black87),
+                    ),
+                  ),
                 ),
               ),
+
+
+
+
+
+              Expanded(flex: 1,
+                child: Container(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          double weight = double.tryParse(weightt!.text) ?? 0.0;
+                          double height = double.tryParse(heightt!.text) ?? 0.0;
+
+                          result = CalculatorFunctions().cauculus(weight, height);
+
+                        });
+                      },
+                      child: const Text("Calculate"),
+                    ),
+                  ),
+                ),
+              ),
+
+
+
               Expanded(flex: 1,
                 child: Container(
                   //height: 30,
@@ -76,6 +112,10 @@ class _SecondPageeState extends State<SecondPagee> {
                   ),
                 ),
               ),
+
+
+
+
             ],
           ),
         ),

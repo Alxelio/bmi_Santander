@@ -35,6 +35,9 @@ I made a reset Function to clean all the variables. And for this, I placed a Fun
 It was done some improvements and changes.
 
 # Number 8
-I placed the calculus function and put the background color in the second page as well. 
+I placed the calculus function and put the background color in the second page as well.
+
+# Number 9
+I renamed all files and classes just to follow the standard / default which ones required in Flutter. I also tried to make some improvements.
 
 
