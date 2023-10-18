@@ -40,4 +40,7 @@ I placed the calculus function and put the background color in the second page a
 # Number 9
 I renamed all files and classes just to follow the standard / default which ones required in Flutter. I also tried to make some improvements.
 
+# Number 10
+For the reason which in the functions.dart the class CalculatorFunctions isn't in the statefullWidget, in fact, I was not allowed to change indeed the state of the variable result for other parts of code. 
+So I changed the logic of this code as I did and everyone can see it below.
 

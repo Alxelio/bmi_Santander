@@ -17,7 +17,7 @@ const kInputDecorationNamee = InputDecoration(
 
 const kInputDecorationWeightt = InputDecoration(
   hintText: "Enter your Weight in kilograms",
-  labelText: "Weight",
+  labelText: "Weight in kilograms",
   border: OutlineInputBorder(),
   labelStyle: TextStyle(
     color: Colors.white,
@@ -27,7 +27,7 @@ const kInputDecorationWeightt = InputDecoration(
 
 const kInputDecorationHeightt = InputDecoration(
   hintText: "Enter your Height in meters",
-  labelText: "Height",
+  labelText: "Height in meters",
   border: OutlineInputBorder(),
   labelStyle: TextStyle(
     color: Colors.white,
