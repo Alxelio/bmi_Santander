@@ -7,6 +7,7 @@ TextEditingController? namee = TextEditingController();
 TextEditingController? weightt = TextEditingController();
 TextEditingController? heightt = TextEditingController();
 String informationn = 'Give some Informations about you, please';
+List<String> resultsList = [];
 
 class Person extends StatefulWidget {
   @override
@@ -115,11 +116,20 @@ class _PersonState extends State<Person> {
                             ),
                           ),
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                  return SecondPage();
-                                }),
-                            );
-                          }),
+                            double weight = double.tryParse(weightt!.text) ?? 0.0;
+                            double height = double.tryParse(heightt!.text) ?? 0.0;
+                            String result = cauculus(weight, height);
+                            resultsList.add(result);
+
+                                setState(() {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) {
+                                      return SecondPage(resultsList);
+                                    }),
+                                  );
+                                });
+                              }),
                       ),
                     ),
 

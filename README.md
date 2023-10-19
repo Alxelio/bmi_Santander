@@ -44,3 +44,5 @@ I renamed all files and classes just to follow the standard / default which ones
 For the reason which in the functions.dart the class CalculatorFunctions isn't in the statefullWidget, in fact, I was not allowed to change indeed the state of the variable result for other parts of code. 
 So I changed the logic of this code as I did and everyone can see it below.
 
+# Number 11
+I replaced the function cauculus() into the functions.dart file. I added a ListView.builder for scrolling so much as it needs and then, the result is shown as a list.
